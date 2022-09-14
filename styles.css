@@ -1,0 +1,161 @@
+:root {
+  --clr-bg: hsl(185, 75%, 39%);
+  --clr-primary: hsl(229, 23%, 23%);
+  --clr-top: hsl(227, 10%, 46%);
+  --clr-stats: hsl(0, 0%, 59%);
+
+  --fs-400: 1.125rem;
+  --ff-main: "Kumbh Sans", sans-serif;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font: inherit;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-bg);
+  background-image: url("images/bg-pattern-top.svg"),
+    url("images/bg-pattern-bottom.svg");
+  background-position: left -10em top -600px, right -10em bottom -600px;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 70em, 70em;
+  font-family: var(--ff-main);
+  position: relative;
+}
+main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: url("images/bg-pattern-top.svg") no-repeat; */
+}
+section {
+  background-color: white;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0px 30px 50px hsl(185, 51%, 33%);
+}
+img {
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1.5em;
+  border-top: 0.5px solid hsla(0, 0%, 59%, 0.3);
+}
+.top-name {
+  padding-top: 3em;
+  text-align: center;
+  padding-bottom: 0.4em;
+}
+p {
+  text-align: center;
+  padding-bottom: 1.5em;
+  color: var(--clr-top);
+}
+.age {
+  color: var(--clr-top);
+  font-weight: 400;
+  padding-left: 0.2em;
+}
+.bottom-span {
+  font-size: 0.8rem;
+  color: var(--clr-stats);
+  letter-spacing: 1px;
+}
+.card {
+  position: relative;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  background-image: url("images/image-victor.jpg");
+  width: 100px;
+  height: 100px;
+  top: 5rem;
+  left: 7.8rem;
+  border-radius: 50%;
+  border: 5px solid white;
+}
+
+@media (max-width: 440px) {
+  body {
+    background-image: url("images/bg-pattern-top.svg"),
+      url("images/bg-pattern-bottom.svg");
+    background-position: left -31em top -300px, right -31em bottom -300px;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 45em, 45em;
+  }
+}
